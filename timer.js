@@ -86,6 +86,7 @@ function startTimer() {
   if (ovenAlreadyRan) { return }
   // dont run the timer if there is already one timer running!
   if (cookieCount > 0){
+    document.getElementById("clear").disabled = true;
     ovenNotice.innerHTML = '';
     if (!timerRunning) {
       addTime();
@@ -102,6 +103,7 @@ function startTimer() {
 function endTimer() {
   clearInterval(timer);
   timerRunning = false;
+  // stopBaking();
 }
 
 // move to oven/script.js
